@@ -5,14 +5,13 @@ public class DisableRemoteAudioListener : MonoBehaviour
 {
     private void Start()
     {
-        // Get the NetworkObject component attached to the player prefab
+        // Get the NetworkObject component attached to this player
         NetworkObject netObj = GetComponent<NetworkObject>();
         if (netObj != null)
         {
-            // If this instance is not the local player, disable the AudioListener
+            // If this instance is not the local player, disable all AudioListeners in children
             if (!netObj.HasInputAuthority)
             {
-                // Disable all AudioListener components in children (if any)
                 AudioListener[] listeners = GetComponentsInChildren<AudioListener>();
                 foreach (var listener in listeners)
                 {

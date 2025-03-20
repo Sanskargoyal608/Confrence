@@ -7,7 +7,7 @@ public class RequestMicAccess : MonoBehaviour
         if (Microphone.devices.Length > 0)
         {
             Debug.Log("Microphones detected: " + Microphone.devices[0]);
-            // Start a temporary recording to force Windows to prompt for mic access if not granted
+            // Start a temporary recording to prompt mic access
             AudioClip tempClip = Microphone.Start(Microphone.devices[0], false, 1, 44100);
             Debug.Log("Recording started, please speak into the mic...");
             // Stop recording after a short delay

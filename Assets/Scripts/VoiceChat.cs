@@ -1,5 +1,4 @@
 using Photon.Voice.Unity;
-using Photon.Realtime;
 using UnityEngine;
 
 public class VoiceChat : MonoBehaviour
@@ -9,6 +8,16 @@ public class VoiceChat : MonoBehaviour
     void Start()
     {
         recorder = GetComponent<Recorder>();
-        recorder.TransmitEnabled = true;
+        if (recorder != null)
+        {
+            recorder.TransmitEnabled = true;
+            // Enable Debug Echo Mode to hear your own voice for testing:
+            recorder.DebugEchoMode = true;
+            Debug.Log("VoiceChat: Recorder TransmitEnabled and DebugEchoMode set.");
+        }
+        else
+        {
+            Debug.LogError("VoiceChat: Recorder component missing on this GameObject.");
+        }
     }
 }

@@ -10,7 +10,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 {
     private NetworkRunner _runner;
     public TMP_InputField roomCodeInput; // Assign in Inspector
-    public GameObject playerPrefab;       // Assign in Inspector (should have a NetworkObject and tag "Player")
+    public GameObject playerPrefab;       // Assign in Inspector – should have a NetworkObject, PhotonVoiceView, Recorder, Speaker, and tag "Player"
 
     void Start()
     {
@@ -21,11 +21,11 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     // HOST GAME METHOD
     public void StartHost()
     {
-        // Generate a random room code (e.g., "VRRoom1234")
+        // Generate a random room code, e.g., "VRRoom1234"
         string roomCode = "VRRoom" + UnityEngine.Random.Range(1000, 9999);
         Debug.Log("Starting as Host... Room Code: " + roomCode);
 
-        // If a local (non-networked) player already exists, destroy it
+        // If a non-networked local player already exists, destroy it
         GameObject existingPlayer = GameObject.FindGameObjectWithTag("Player");
         if (existingPlayer != null)
         {
@@ -77,8 +77,8 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         if (!_runner.IsServer)
             return;
 
-        // Use the new recommended method to get all network objects (avoids deprecated FindObjectsOfType)
-        // FindObjectsByType<T>(FindObjectsSortMode) is available in Unity 2023
+        // Check if a player with this authority is already spawned.
+        // Using FindObjectsByType avoids deprecated calls.
         NetworkObject[] existingPlayers = UnityEngine.Object.FindObjectsByType<NetworkObject>(FindObjectsSortMode.None);
         foreach (var netObj in existingPlayers)
         {
@@ -93,7 +93,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-2, 2), 0, UnityEngine.Random.Range(-2, 2));
         NetworkObject newPlayer = _runner.Spawn(playerPrefab, spawnPosition, Quaternion.identity, player);
 
-        // If the spawned player has input authority (i.e. is the local player), enable its VR controls
+        // If this is the local player, enable its VR controls
         if (newPlayer.HasInputAuthority)
         {
             PlayerVRController vrController = newPlayer.GetComponent<PlayerVRController>();
@@ -109,7 +109,6 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     }
 
     // INetworkRunnerCallbacks IMPLEMENTATION
-
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
         Debug.Log($"Player {player} joined the room.");
