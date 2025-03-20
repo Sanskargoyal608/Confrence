@@ -1,0 +1,157 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Confrence\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF7265BD-A12E-B1C2-473F-7ABD2661E931}|PhotonVoice.Editor.csproj|e:\\confrence\\assets\\photon\\photonvoice\\code\\editor\\photonvoice.editor.asmdef||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{AF7265BD-A12E-B1C2-473F-7ABD2661E931}|PhotonVoice.Editor.csproj|solutionrelative:assets\\photon\\photonvoice\\code\\editor\\photonvoice.editor.asmdef||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D8CC2BC-4324-1D97-2FD0-189C90D78140}|PhotonVoice.PUN.csproj|e:\\confrence\\assets\\photon\\photonvoice\\code\\pun\\photonvoiceview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D8CC2BC-4324-1D97-2FD0-189C90D78140}|PhotonVoice.PUN.csproj|solutionrelative:assets\\photon\\photonvoice\\code\\pun\\photonvoiceview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|e:\\confrence\\assets\\scripts\\requestmicaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\requestmicaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|e:\\confrence\\assets\\scripts\\disableremoteaudiolistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\disableremoteaudiolistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|E:\\Confrence\\assets\\scripts\\playervrcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playervrcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|E:\\Confrence\\assets\\scripts\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Confrence\\Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|E:\\Confrence\\assets\\scripts\\voicechat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\voicechat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PhotonVoice.Editor.asmdef",
+              "DocumentMoniker": "E:\\Confrence\\Assets\\Photon\\PhotonVoice\\Code\\Editor\\PhotonVoice.Editor.asmdef",
+              "RelativeDocumentMoniker": "Assets\\Photon\\PhotonVoice\\Code\\Editor\\PhotonVoice.Editor.asmdef",
+              "ToolTip": "E:\\Confrence\\Assets\\Photon\\PhotonVoice\\Code\\Editor\\PhotonVoice.Editor.asmdef",
+              "RelativeToolTip": "Assets\\Photon\\PhotonVoice\\Code\\Editor\\PhotonVoice.Editor.asmdef",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001874|",
+              "WhenOpened": "2025-03-19T10:13:37.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PhotonVoiceView.cs",
+              "DocumentMoniker": "E:\\Confrence\\Assets\\Photon\\PhotonVoice\\Code\\PUN\\PhotonVoiceView.cs",
+              "RelativeDocumentMoniker": "Assets\\Photon\\PhotonVoice\\Code\\PUN\\PhotonVoiceView.cs",
+              "ToolTip": "E:\\Confrence\\Assets\\Photon\\PhotonVoice\\Code\\PUN\\PhotonVoiceView.cs",
+              "RelativeToolTip": "Assets\\Photon\\PhotonVoice\\Code\\PUN\\PhotonVoiceView.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T10:01:19.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RequestMicAccess.cs",
+              "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\RequestMicAccess.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RequestMicAccess.cs",
+              "ToolTip": "E:\\Confrence\\Assets\\Scripts\\RequestMicAccess.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RequestMicAccess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T08:27:39.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DisableRemoteAudioListener.cs",
+              "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\DisableRemoteAudioListener.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DisableRemoteAudioListener.cs",
+              "ToolTip": "E:\\Confrence\\Assets\\Scripts\\DisableRemoteAudioListener.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DisableRemoteAudioListener.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T08:04:15.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProjectWideActionsAsset.cs",
+              "DocumentMoniker": "E:\\Confrence\\Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
+              "ToolTip": "E:\\Confrence\\Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAAiwMkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T19:54:15.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerVRController.cs",
+              "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\PlayerVRController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerVRController.cs",
+              "ToolTip": "E:\\Confrence\\Assets\\Scripts\\PlayerVRController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerVRController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T12:21:35.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NetworkManager.cs",
+              "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\NetworkManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NetworkManager.cs",
+              "ToolTip": "E:\\Confrence\\Assets\\Scripts\\NetworkManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NetworkManager.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAA/wI0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T17:48:30.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "VoiceChat.cs",
+              "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\VoiceChat.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\VoiceChat.cs",
+              "ToolTip": "E:\\Confrence\\Assets\\Scripts\\VoiceChat.cs",
+              "RelativeToolTip": "Assets\\Scripts\\VoiceChat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T19:29:15.544Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

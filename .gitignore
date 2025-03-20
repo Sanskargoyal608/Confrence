@@ -1,0 +1,15 @@
+# Unity Generated Files (Do not commit these)
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+*.csproj
+*.sln
+*.unitypackage
+
+# Photon & Gusion Dependencies (if required)
+Photon/
+Gusion/
