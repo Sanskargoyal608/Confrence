@@ -15,7 +15,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     void Start()
     {
         // Create a NetworkRunner component on this GameObject
-        _runner = gameObject.AddComponent<NetworkRunner>();
+        _runner = gameObject.GetComponent<NetworkRunner>();
     }
 
     // HOST GAME METHOD
