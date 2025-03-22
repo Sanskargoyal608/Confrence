@@ -525,6 +525,7 @@ GameObject:
   - component: {fileID: 3070060041734396296}
   - component: {fileID: 7052283413604110897}
   - component: {fileID: 1834070871741225026}
+  - component: {fileID: 4030892871013410429}
   m_Layer: 0
   m_Name: XR Origin (VR)
   m_TagString: Untagged
@@ -565,7 +566,7 @@ MonoBehaviour:
   m_Camera: {fileID: 7424643913339195092}
   m_OriginBaseGameObject: {fileID: 4479958613302659910}
   m_CameraFloorOffsetObject: {fileID: 522252402003390982}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.6
 --- !u!114 &4793575011039732808
 MonoBehaviour:
@@ -685,6 +686,31 @@ MonoBehaviour:
     m_InputActionReference: {fileID: 0}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualValue: {x: 0, y: 0}
+--- !u!143 &4030892871013410429
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4479958613302659910}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4974711767484871118
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,10 +720,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 750359370991679848}
-  - component: {fileID: 6455554803992726617}
   - component: {fileID: 7844894176391847482}
   - component: {fileID: 1171002738518726108}
-  - component: {fileID: 2616807398608524291}
   - component: {fileID: 5031674647341446054}
   - component: {fileID: 544379378204805808}
   m_Layer: 0
@@ -722,49 +746,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8383733779066219679}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6455554803992726617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4974711767484871118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91175dcc15224463780e01a8a98b1b60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  voiceDetection: 1
-  voiceDetectionThreshold: 0.01
-  voiceDetectionDelayMs: 500
-  interestGroup: 0
-  useTargetPlayers: 0
-  targetPlayers: 
-  debugEchoMode: 0
-  reliableMode: 0
-  encrypt: 0
-  transmitEnabled: 1
-  samplingRate: 24000
-  frameDuration: 20000
-  bitrate: 30000
-  sourceType: 0
-  microphoneType: 0
-  audioClip: {fileID: 0}
-  loopAudioClip: 1
-  recordingEnabled: 1
-  audioSessionParameters:
-    Category: 4
-    Mode: 1
-    CategoryOptions: 0800000004000000
-  editorAudioSessionPreset: 1
-  androidMicrophoneSettings:
-    EnableAEC: 1
-    EnableAGC: 1
-    EnableNS: 1
-  stopRecordingWhenPaused: 0
-  useOnAudioFilterRead: 0
-  useMicrophoneTypeFallback: 1
-  recordWhenJoined: 1
 --- !u!82 &7844894176391847482
 AudioSource:
   m_ObjectHideFlags: 0
@@ -880,18 +861,6 @@ MonoBehaviour:
     Max: 1000
     SpeedUpPerc: 5
   restartOnDeviceChange: 1
---- !u!114 &2616807398608524291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4974711767484871118}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a82f6069a7814449861ff4f18db3ef3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5031674647341446054
 MonoBehaviour:
   m_ObjectHideFlags: 0
