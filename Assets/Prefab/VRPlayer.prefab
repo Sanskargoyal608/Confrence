@@ -583,7 +583,7 @@ MonoBehaviour:
   m_XROrigin: {fileID: 6830182655672770315}
   m_BodyPositionEvaluatorObject: {fileID: 0}
   m_ConstrainedBodyManipulatorObject: {fileID: 0}
-  m_UseCharacterControllerIfExists: 1
+  m_UseCharacterControllerIfExists: 0
 --- !u!114 &3070060041734396296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,7 +702,7 @@ CharacterController:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5

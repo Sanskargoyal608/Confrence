@@ -77,8 +77,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         if (!_runner.IsServer)
             return;
 
-        // Check if a player with this authority is already spawned.
-        // Using FindObjectsByType avoids deprecated calls.
+        // Check for existing network objects with this player authority
         NetworkObject[] existingPlayers = UnityEngine.Object.FindObjectsByType<NetworkObject>(FindObjectsSortMode.None);
         foreach (var netObj in existingPlayers)
         {
@@ -89,22 +88,19 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             }
         }
 
-        // Spawn a new networked VR player at a random position
+        // Define a spawn position – adjust as necessary
         Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-2, 2), 0, UnityEngine.Random.Range(-2, 2));
         NetworkObject newPlayer = _runner.Spawn(playerPrefab, spawnPosition, Quaternion.identity, player);
 
-        // If this is the local player, enable its VR controls
-        if (newPlayer.HasInputAuthority)
+        // Setup the player name on the avatar (customize as needed)
+        NetworkVRAvatar avatar = newPlayer.GetComponent<NetworkVRAvatar>();
+        if (avatar != null && newPlayer.HasInputAuthority)
         {
-            PlayerVRController vrController = newPlayer.GetComponent<PlayerVRController>();
-            if (vrController != null)
-            {
-                vrController.EnableVRControls();
-            }
-            else
-            {
-                Debug.LogWarning("PlayerVRController component missing on playerPrefab.");
-            }
+            avatar.SetPlayerName("Player " + player);
+        }
+        else
+        {
+            Debug.LogWarning("NetworkVRAvatar component missing on VR Avatar Prefab.");
         }
     }
 
