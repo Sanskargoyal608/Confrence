@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "E:\\Confrence\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|e:\\confrence\\assets\\com.unity.uiextensions\\examples\\menuexample\\scripts\\menus\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|E:\\Confrence\\assets\\scripts\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Confrence\\Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|E:\\Confrence\\assets\\com.unity.uiextensions\\examples\\menuexample\\scripts\\menus\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|solutionrelative:assets\\com.unity.uiextensions\\examples\\menuexample\\scripts\\menus\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -29,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Confrence\\Assets\\VRMPAssets\\Scripts\\Gameplay\\Drawing\\SimplePen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\VRMPAssets\\Scripts\\Gameplay\\Drawing\\SimplePen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|E:\\Confrence\\assets\\scripts\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B64B1569-71D7-F415-93B1-360B3154E9F0}|Assembly-CSharp.csproj|E:\\Confrence\\assets\\photon\\fusion\\assemblies\\fusion.runtime.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}",
@@ -86,50 +90,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainMenu.cs",
-              "DocumentMoniker": "E:\\Confrence\\Assets\\com.unity.uiextensions\\Examples\\MenuExample\\Scripts\\Menus\\MainMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\com.unity.uiextensions\\Examples\\MenuExample\\Scripts\\Menus\\MainMenu.cs",
-              "ToolTip": "E:\\Confrence\\Assets\\com.unity.uiextensions\\Examples\\MenuExample\\Scripts\\Menus\\MainMenu.cs",
-              "RelativeToolTip": "Assets\\com.unity.uiextensions\\Examples\\MenuExample\\Scripts\\Menus\\MainMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T11:39:31.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TMP_FontAsset.cs",
-              "DocumentMoniker": "E:\\Confrence\\Library\\PackageCache\\com.unity.ugui@22ebcc83720a\\Runtime\\TMP\\TMP_FontAsset.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui@22ebcc83720a\\Runtime\\TMP\\TMP_FontAsset.cs",
-              "ToolTip": "E:\\Confrence\\Library\\PackageCache\\com.unity.ugui@22ebcc83720a\\Runtime\\TMP\\TMP_FontAsset.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.ugui@22ebcc83720a\\Runtime\\TMP\\TMP_FontAsset.cs",
-              "ViewState": "AgIAACMDAAAAAAAAAAAiwDIDAACYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T11:28:17.502Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ProjectWideActionsAsset.cs",
-              "DocumentMoniker": "E:\\Confrence\\Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
-              "ToolTip": "E:\\Confrence\\Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
-              "ViewState": "AgIAAKwAAAAAAAAAAADwv8kAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T19:54:15.243Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ReadmeEditor.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\TutorialInfo\\Scripts\\Editor\\ReadmeEditor.cs",
               "RelativeDocumentMoniker": "Assets\\TutorialInfo\\Scripts\\Editor\\ReadmeEditor.cs",
@@ -140,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "VoiceDrivenMouthArticulation.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\VoiceDrivenMouthArticulation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VoiceDrivenMouthArticulation.cs",
@@ -151,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "SimplePen.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\VRMPAssets\\Scripts\\Gameplay\\Drawing\\SimplePen.cs",
               "RelativeDocumentMoniker": "Assets\\VRMPAssets\\Scripts\\Gameplay\\Drawing\\SimplePen.cs",
@@ -162,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "NetworkVRAvatar.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\VRMPAssets\\Scripts\\Network\\NetworkVRAvatar.cs",
               "RelativeDocumentMoniker": "Assets\\VRMPAssets\\Scripts\\Network\\NetworkVRAvatar.cs",
@@ -174,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "XRINetworkPlayer.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\VRMPAssets\\Scripts\\Network\\NetworkPlayer\\XRINetworkPlayer.cs",
               "RelativeDocumentMoniker": "Assets\\VRMPAssets\\Scripts\\Network\\NetworkPlayer\\XRINetworkPlayer.cs",
@@ -186,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "LobbyManager.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\VRMPAssets\\Scripts\\Network\\NetworkManagers\\LobbyManager.cs",
               "RelativeDocumentMoniker": "Assets\\VRMPAssets\\Scripts\\Network\\NetworkManagers\\LobbyManager.cs",
@@ -198,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "PlayerNameTag.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\VRMPAssets\\Scripts\\Player\\PlayerNameTag.cs",
               "RelativeDocumentMoniker": "Assets\\VRMPAssets\\Scripts\\Player\\PlayerNameTag.cs",
@@ -209,12 +174,74 @@
               "WhenOpened": "2025-03-23T10:48:32.087Z"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NetworkManager.cs",
+              "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\NetworkManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NetworkManager.cs",
+              "ToolTip": "E:\\Confrence\\Assets\\Scripts\\NetworkManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NetworkManager.cs",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAwwMEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T17:48:30.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProjectWideActionsAsset.cs",
+              "DocumentMoniker": "E:\\Confrence\\Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
+              "ToolTip": "E:\\Confrence\\Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.inputsystem@e2c83221d2dc\\InputSystem\\Editor\\ProjectWideActions\\ProjectWideActionsAsset.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAADwv8kAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T19:54:15.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TMP_FontAsset.cs",
+              "DocumentMoniker": "E:\\Confrence\\Library\\PackageCache\\com.unity.ugui@22ebcc83720a\\Runtime\\TMP\\TMP_FontAsset.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui@22ebcc83720a\\Runtime\\TMP\\TMP_FontAsset.cs",
+              "ToolTip": "E:\\Confrence\\Library\\PackageCache\\com.unity.ugui@22ebcc83720a\\Runtime\\TMP\\TMP_FontAsset.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.ugui@22ebcc83720a\\Runtime\\TMP\\TMP_FontAsset.cs",
+              "ViewState": "AgIAACMDAAAAAAAAAAAiwDIDAACYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T11:28:17.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "E:\\Confrence\\Assets\\com.unity.uiextensions\\Examples\\MenuExample\\Scripts\\Menus\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\com.unity.uiextensions\\Examples\\MenuExample\\Scripts\\Menus\\MainMenu.cs",
+              "ToolTip": "E:\\Confrence\\Assets\\com.unity.uiextensions\\Examples\\MenuExample\\Scripts\\Menus\\MainMenu.cs",
+              "RelativeToolTip": "Assets\\com.unity.uiextensions\\Examples\\MenuExample\\Scripts\\Menus\\MainMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T11:39:31.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Lit.shader",
+              "DocumentMoniker": "E:\\Confrence\\Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\Lit.shader",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\Lit.shader",
+              "ToolTip": "E:\\Confrence\\Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\Lit.shader",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.render-pipelines.universal@506b3deb0041\\Shaders\\Lit.shader",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2025-03-27T16:30:53.79Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "XRKeyboardDisplay.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\Samples\\XR Interaction Toolkit\\3.0.7\\Spatial Keyboard\\Scripts\\XRKeyboardDisplay.cs",
               "RelativeDocumentMoniker": "Assets\\Samples\\XR Interaction Toolkit\\3.0.7\\Spatial Keyboard\\Scripts\\XRKeyboardDisplay.cs",
@@ -226,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "NetworkVRAvatar.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\NetworkVRAvatar.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\NetworkVRAvatar.cs",
@@ -238,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Fusion.Runtime.dll",
               "DocumentMoniker": "E:\\Confrence\\Assets\\Photon\\Fusion\\Assemblies\\Fusion.Runtime.dll",
               "RelativeDocumentMoniker": "Assets\\Photon\\Fusion\\Assemblies\\Fusion.Runtime.dll",
@@ -249,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PhotonVoiceView.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\Photon\\PhotonVoice\\Code\\PUN\\PhotonVoiceView.cs",
               "RelativeDocumentMoniker": "Assets\\Photon\\PhotonVoice\\Code\\PUN\\PhotonVoiceView.cs",
@@ -261,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "RequestMicAccess.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\RequestMicAccess.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RequestMicAccess.cs",
@@ -273,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "DisableRemoteAudioListener.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\DisableRemoteAudioListener.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DisableRemoteAudioListener.cs",
@@ -285,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "PlayerVRController.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\PlayerVRController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerVRController.cs",
@@ -297,19 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "NetworkManager.cs",
-              "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\NetworkManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\NetworkManager.cs",
-              "ToolTip": "E:\\Confrence\\Assets\\Scripts\\NetworkManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\NetworkManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:48:30.095Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "VoiceChat.cs",
               "DocumentMoniker": "E:\\Confrence\\Assets\\Scripts\\VoiceChat.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VoiceChat.cs",

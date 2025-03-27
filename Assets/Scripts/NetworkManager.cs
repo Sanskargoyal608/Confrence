@@ -12,6 +12,15 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     public TMP_InputField roomCodeInput; // Assign in Inspector
     public GameObject playerPrefab;       // Assign in Inspector – should have a NetworkObject, PhotonVoiceView, Recorder, Speaker, and tag "Player"
 
+    [Header("Spawn Points")]
+    public Transform centerChair;         // The designated host spawn position.
+    public Transform[] otherChairs;       // The available chairs for non-host players.
+
+    // To track which chairs are occupied.
+    private Dictionary<Transform, PlayerRef> chairOccupancy = new Dictionary<Transform, PlayerRef>();
+    // To quickly map a player to their chair.
+    private Dictionary<PlayerRef, Transform> playerChairMapping = new Dictionary<PlayerRef, Transform>();
+
     void Start()
     {
         // Create a NetworkRunner component on this GameObject
@@ -73,11 +82,11 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     // SPAWN PLAYER METHOD
     public void SpawnPlayer(PlayerRef player)
     {
-        // Only the server spawns player objects
+        // Only the server spawns player objects.
         if (!_runner.IsServer)
             return;
 
-        // Check for existing network objects with this player authority
+        // Check for existing network objects with this player authority.
         NetworkObject[] existingPlayers = UnityEngine.Object.FindObjectsByType<NetworkObject>(FindObjectsSortMode.None);
         foreach (var netObj in existingPlayers)
         {
@@ -88,14 +97,56 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             }
         }
 
-        // Define a spawn position – adjust as necessary
-        Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-2, 2), 0, UnityEngine.Random.Range(-2, 2));
+        Vector3 spawnPosition = Vector3.zero;
+        Transform chosenChair = null;
+
+        // Determine if this player is the host.
+        // For this example, we assume the first player (when no chair is occupied) is the host.
+        if (chairOccupancy.Count == 0)
+        {
+            // Host: assign the center chair.
+            chosenChair = centerChair;
+            spawnPosition = centerChair.position;
+        }
+        else
+        {
+            // Non-host: choose an available chair from otherChairs.
+            List<Transform> availableChairs = new List<Transform>();
+            foreach (Transform chair in otherChairs)
+            {
+                if (!chairOccupancy.ContainsKey(chair))
+                {
+                    availableChairs.Add(chair);
+                }
+            }
+            if (availableChairs.Count > 0)
+            {
+                int index = UnityEngine.Random.Range(0, availableChairs.Count);
+                chosenChair = availableChairs[index];
+                spawnPosition = chosenChair.position;
+            }
+            else
+            {
+                // No available chairs: fallback to a random spawn position.
+                spawnPosition = new Vector3(UnityEngine.Random.Range(-2, 2), 0, UnityEngine.Random.Range(-2, 2));
+            }
+        }
+
+        // Record the chair occupancy for this player.
+        if (chosenChair != null)
+        {
+            chairOccupancy[chosenChair] = player;
+            playerChairMapping[player] = chosenChair;
+        }
+
+        // Spawn the player at the designated chair position.
         NetworkObject newPlayer = _runner.Spawn(playerPrefab, spawnPosition, Quaternion.identity, player);
 
-        // Setup the player name on the avatar (customize as needed)
+        // Setup the player name on the avatar (customize as needed).
         NetworkVRAvatar avatar = newPlayer.GetComponent<NetworkVRAvatar>();
         if (avatar != null && newPlayer.HasInputAuthority)
         {
+            // Set the player's name (replace with the actual name from the homescreen if available).
             avatar.SetPlayerName("Player " + player);
         }
         else
@@ -114,6 +165,12 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
     {
         Debug.Log($"Player {player} left the room.");
+        // Free the chair used by the departing player.
+        if (playerChairMapping.TryGetValue(player, out Transform chair))
+        {
+            chairOccupancy.Remove(chair);
+            playerChairMapping.Remove(player);
+        }
     }
 
     public void OnInput(NetworkRunner runner, NetworkInput input) { }
