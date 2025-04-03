@@ -39,7 +39,7 @@ public class PDFManager : MonoBehaviour
         form.AddBinaryData("file", pdfData, "presentation.pdf", "application/pdf");
 
         // Replace with your server's URL (e.g., "http://192.168.1.100:5000/convert_pdf")
-        string serverUrl = "http://192.168.47.13:5000/convert_pdf";
+        string serverUrl = "http://192.168.47.13:5000/convert_file";
 
         UnityWebRequest uploadRequest = UnityWebRequest.Post(serverUrl, form);
         yield return uploadRequest.SendWebRequest();
