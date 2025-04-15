@@ -8,11 +8,12 @@ public class PDFManager : MonoBehaviour
     public PresentationController presentationController;
 
     // Call this method from your UI when the user submits the PDF URL
-    public void DownloadAndProcessPDF(string pdfUrl)
+    public void DownloadAndProcessFile(string fileUrl)
     {
-        Debug.Log("Starting PDF download: " + pdfUrl);
-        StartCoroutine(DownloadPDFCoroutine(pdfUrl));
+        Debug.Log("Starting file download: " + fileUrl);
+        StartCoroutine(DownloadPDFCoroutine(fileUrl)); // or rename DownloadPDFCoroutine to DownloadFileCoroutine if desired.
     }
+
 
     // Step 1: Download the PDF file from the provided URL
     IEnumerator DownloadPDFCoroutine(string pdfUrl)
@@ -39,7 +40,7 @@ public class PDFManager : MonoBehaviour
         form.AddBinaryData("file", pdfData, "presentation.pdf", "application/pdf");
 
         // Replace with your server's URL (e.g., "http://192.168.1.100:5000/convert_pdf")
-        string serverUrl = "http://192.168.47.13:5000/convert_file";
+        string serverUrl = "http://192.168.137.206:5000/convert_file";
 
         UnityWebRequest uploadRequest = UnityWebRequest.Post(serverUrl, form);
         yield return uploadRequest.SendWebRequest();

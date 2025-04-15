@@ -10,11 +10,14 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 {
     private NetworkRunner _runner;
     public TMP_InputField roomCodeInput; // Assign in Inspector
-    public GameObject playerPrefab;       // Assign in Inspector – should have a NetworkObject, PhotonVoiceView, Recorder, Speaker, and tag "Player"
+    public GameObject playerPrefab;       // Assign in Inspector – must include NetworkObject, PhotonVoiceView, Recorder, Speaker, and have tag "Player"
 
     [Header("Spawn Points")]
     public Transform centerChair;         // The designated host spawn position.
-    public Transform[] otherChairs;       // The available chairs for non-host players.
+    public Transform[] otherChairs;         // The available chairs for non-host players.
+
+    [Header("UI Elements")]
+    public TMP_Text roomCodeDisplay;
 
     // To track which chairs are occupied.
     private Dictionary<Transform, PlayerRef> chairOccupancy = new Dictionary<Transform, PlayerRef>();
@@ -30,18 +33,22 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     // HOST GAME METHOD
     public void StartHost()
     {
-        // Generate a random room code, e.g., "VRRoom1234"
         string roomCode = "VRRoom" + UnityEngine.Random.Range(1000, 9999);
         Debug.Log("Starting as Host... Room Code: " + roomCode);
+        if (roomCodeDisplay != null)
+            roomCodeDisplay.text = roomCode;
 
-        // If a non-networked local player already exists, destroy it
+        // Show the loading screen
+        LoadingScreenManager loadingManager = UnityEngine.Object.FindFirstObjectByType<LoadingScreenManager>();
+        if (loadingManager != null)
+            loadingManager.ShowLoadingScreen();
+
+        // Destroy any existing non-networked player
         GameObject existingPlayer = GameObject.FindGameObjectWithTag("Player");
         if (existingPlayer != null)
-        {
             Destroy(existingPlayer);
-        }
 
-        // Start the game as Host with the given session name
+        // Start host game
         _runner.StartGame(new StartGameArgs()
         {
             GameMode = GameMode.Host,
@@ -54,7 +61,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     // JOIN GAME METHOD
     public void JoinGame()
     {
-        string roomCode = roomCodeInput.text;
+        string roomCode = roomCodeInput.text.Trim();
         if (string.IsNullOrEmpty(roomCode))
         {
             Debug.LogError("Room Code is empty! Enter a valid room code.");
@@ -62,13 +69,14 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         }
 
         Debug.Log("Joining Room: " + roomCode);
+        // Show the loading screen
+        LoadingScreenManager loadingManager = UnityEngine.Object.FindFirstObjectByType<LoadingScreenManager>();
+        if (loadingManager != null)
+            loadingManager.ShowLoadingScreen();
 
-        // If a non-networked local player exists, destroy it before joining
         GameObject existingPlayer = GameObject.FindGameObjectWithTag("Player");
         if (existingPlayer != null && existingPlayer.GetComponent<NetworkObject>() == null)
-        {
             Destroy(existingPlayer);
-        }
 
         _runner.StartGame(new StartGameArgs()
         {
@@ -79,14 +87,13 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         });
     }
 
-    // SPAWN PLAYER METHOD
+    // SPAWN PLAYER METHOD (Server-side)
     public void SpawnPlayer(PlayerRef player)
     {
-        // Only the server spawns player objects.
         if (!_runner.IsServer)
             return;
 
-        // Check for existing network objects with this player authority.
+        // Prevent duplicate spawns
         NetworkObject[] existingPlayers = UnityEngine.Object.FindObjectsByType<NetworkObject>(FindObjectsSortMode.None);
         foreach (var netObj in existingPlayers)
         {
@@ -100,24 +107,19 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         Vector3 spawnPosition = Vector3.zero;
         Transform chosenChair = null;
 
-        // Determine if this player is the host.
-        // For this example, we assume the first player (when no chair is occupied) is the host.
         if (chairOccupancy.Count == 0)
         {
-            // Host: assign the center chair.
+            // Host spawns at centerChair
             chosenChair = centerChair;
             spawnPosition = centerChair.position;
         }
         else
         {
-            // Non-host: choose an available chair from otherChairs.
             List<Transform> availableChairs = new List<Transform>();
             foreach (Transform chair in otherChairs)
             {
                 if (!chairOccupancy.ContainsKey(chair))
-                {
                     availableChairs.Add(chair);
-                }
             }
             if (availableChairs.Count > 0)
             {
@@ -127,27 +129,34 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             }
             else
             {
-                // No available chairs: fallback to a random spawn position.
                 spawnPosition = new Vector3(UnityEngine.Random.Range(-2, 2), 0, UnityEngine.Random.Range(-2, 2));
             }
         }
 
-        // Record the chair occupancy for this player.
         if (chosenChair != null)
         {
             chairOccupancy[chosenChair] = player;
             playerChairMapping[player] = chosenChair;
         }
 
-        // Spawn the player at the designated chair position.
+        Debug.Log($"Spawning player {player} at chair '{chosenChair?.name ?? "None"}' with spawnPosition: {spawnPosition}");
+        // Spawn the complete VR_Player prefab at the spawn position.
         NetworkObject newPlayer = _runner.Spawn(playerPrefab, spawnPosition, Quaternion.identity, player);
 
-        // Setup the player name on the avatar (customize as needed).
+        // Configure the network avatar
         NetworkVRAvatar avatar = newPlayer.GetComponent<NetworkVRAvatar>();
-        if (avatar != null && newPlayer.HasInputAuthority)
+        if (avatar != null)
         {
-            // Set the player's name (replace with the actual name from the homescreen if available).
+            // Set the player's name (use actual name if available)
             avatar.SetPlayerName("Player " + player);
+
+            // Hide loading screen for the local player
+            if (newPlayer.HasInputAuthority)
+            {
+                LoadingScreenManager loadingManager = UnityEngine.Object.FindFirstObjectByType<LoadingScreenManager>();
+                if (loadingManager != null)
+                    loadingManager.HideLoadingScreen();
+            }
         }
         else
         {
@@ -165,7 +174,6 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
     {
         Debug.Log($"Player {player} left the room.");
-        // Free the chair used by the departing player.
         if (playerChairMapping.TryGetValue(player, out Transform chair))
         {
             chairOccupancy.Remove(chair);

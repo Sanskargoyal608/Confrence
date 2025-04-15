@@ -1,53 +1,39 @@
 using UnityEngine;
 using Fusion;
 using TMPro;
-using static Unity.Collections.Unicode;
 
 public class NetworkVRAvatar : NetworkBehaviour
 {
-    [Header("VR Tracking References")]
-    public Transform head;           // Visual head (e.g., from XR rig)
-    public Transform leftHand;       // Visual left hand model
-    public Transform rightHand;      // Visual right hand model
+    [Header("Networked Visual Components (Offline Avatar)")]
+    // This is the part others see:
+    public Transform avatarHead;  // Assign the visual head from the Offline_Player_Avatar
 
-    [Header("Local Tracker References")]
-    public Transform headTracker;    // Local VR headset transform (from XR Origin)
-    public Transform leftController; // Local left controller transform
-    public Transform rightController;// Local right controller transform
+    [Header("Local Tracker References (from XR Origin)")]
+    // These come from the local XR rig (only used if HasInputAuthority):
+    public Transform headTracker;       // Assign the Main Camera transform from XR Origin
+    public Transform leftController;    // (Optional for hand sync)
+    public Transform rightController;   // (Optional for hand sync)
 
     [Header("UI")]
-    public TMP_Text playerNameText; // Reference to the TextMeshPro in the NameUI canvas
+    public TMP_Text playerNameText;     // UI text on the Offline_Player_Avatar (e.g., above head)
 
     public override void FixedUpdateNetwork()
     {
-        // Only update for local player input
         if (HasInputAuthority)
         {
-            // Update the head and hand positions based on local VR tracking
-            if (headTracker != null)
+            // Sync the visual head from the XR tracking data.
+            if (headTracker != null && avatarHead != null)
             {
-                head.position = headTracker.position;
-                head.rotation = headTracker.rotation;
+                avatarHead.position = headTracker.position;
+                avatarHead.rotation = headTracker.rotation;
             }
-            if (leftController != null)
-            {
-                leftHand.position = leftController.position;
-                leftHand.rotation = leftController.rotation;
-            }
-            if (rightController != null)
-            {
-                rightHand.position = rightController.position;
-                rightHand.rotation = rightController.rotation;
-            }
+            // Add similar sync for hands if needed.
         }
     }
 
-    // Call this to set the player's name (called when the player joins)
     public void SetPlayerName(string playerName)
     {
         if (playerNameText != null)
-        {
             playerNameText.text = playerName;
-        }
     }
 }

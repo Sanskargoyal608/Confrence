@@ -31,19 +31,27 @@ public class PresentationController : NetworkBehaviour
     {
         if (Instance == null)
         {
-            Debug.LogError("PresentationController Instance is NULL! Ensure it's assigned properly.");
+            Debug.LogError("PresentationController Instance is NULL!");
             return;
         }
 
         if (!Object.HasStateAuthority)
         {
-            Debug.LogError("No State Authority! Only the presenter should set slides.");
+            Debug.LogError("No State Authority! Only presenter should set slides.");
+            return;
+        }
+
+        if (newSlides == null || newSlides.Length == 0)
+        {
+            Debug.LogError("SetSlides: newSlides is null or empty!");
             return;
         }
 
         slides = newSlides;
+        Debug.Log("Slides loaded: " + slides.Length);
         SetCurrentSlide(0);
     }
+
 
 
     // Navigation methods to be hooked up to VR UI buttons (only for presenter)
@@ -69,13 +77,43 @@ public class PresentationController : NetworkBehaviour
 
     // Fusion RPC to update all screens across the network
     [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    
     public void RPC_UpdateSlide(int slideIndex)
     {
-        if (slides == null || slideIndex < 0 || slideIndex >= slides.Length)
+        if (slides == null)
+        {
+            Debug.LogError("Slides array is null!");
             return;
+        }
+
+        if (slideIndex < 0 || slideIndex >= slides.Length)
+        {
+            Debug.LogError("Invalid slide index: " + slideIndex);
+            return;
+        }
+
+        if (slides[slideIndex] == null)
+        {
+            Debug.LogError("Slide texture at index " + slideIndex + " is null!");
+            return;
+        }
+
         foreach (Renderer renderer in screenRenderers)
         {
+            if (renderer == null)
+            {
+                Debug.LogError("Renderer in screenRenderers is null.");
+                continue;
+            }
+
+            if (renderer.material == null)
+            {
+                Debug.LogWarning("Renderer has no material. Assigning new default material.");
+                renderer.material = new Material(Shader.Find("Unlit/Texture"));
+            }
+
             renderer.material.mainTexture = slides[slideIndex];
         }
     }
+
 }
